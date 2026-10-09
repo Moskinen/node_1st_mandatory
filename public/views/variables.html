@@ -1,0 +1,96 @@
+        
+        <h1>Variables</h1>
+
+        <div id="note-div">
+            <h2>Type coercion</h2>
+                <p>
+                    In Javascript type coercion is when you do an operation on different data types
+                    and js tries to make them fit together by changing the data type to another
+                </p>
+                <code>Example:</code><br>
+                <code>let result1 = ('5' + '2'); // = 52</code><br>
+                <code>let result2 = ('5' - '2'); // = 3</code>
+                <p>
+                    One way to avoid this is by using "===" also known as strictly equal.<br>
+                    This will only return true if both the value and data type is equal
+                </p>
+        </div>
+        
+        <div id="note-div">
+            <h2>Data types</h2>
+                <p>
+                    In JavaScript there is 8 data types: <br>
+                    Strings, Boolean, Number, BigInt, null, undefined, Object, Symbol
+                </p>
+        </div>
+        
+        <div id="note-div">
+            <h2>Arrays</h2>
+                <p>
+                    Like in Java, in JavaScript we use square brackets to instantiate an array. <br>
+                    To add to an array we use .push and take remove from an array we use .pop <br>
+                    If we want to print two elements of an array it's important that we dont use "+" <br>
+                    We should use "," since + "+" can concatenate or coerce the data type 
+                </p>
+                <code> const things = ["mouse"] </code><br>
+                <code> things.push("car") </code><br>
+                <code> console.log(things[0]) </code><br>
+                <code> console.log(things[0], things [1]) </code><br>
+        </div>
+
+        <div id="note-div">
+            <h2>Quotation</h2>
+                <p>
+                    For quotes both ", ', and ´ can be used. 
+                    However if anything but backticks is used you will not be able
+                    to use $ to string interpolate.
+                </p>    
+        </div>
+        
+        <div id="note-div">
+            <h2>var, let, and const </h2>
+                <p>
+                    const is the default, while you should use let if you should reassign the variable.
+                    You should never use var, since it can "bleed out" in other scopes, and be changed in different files.
+                </p>
+<pre>
+    <code>
+{ Block scope
+    var someValue = 123;
+    {
+        var someValue = 456;
+    }    
+    console.log(someValue)
+}
+
+let can change, but always within scope
+{
+    let someOtherValue = true;
+    {
+        let someOtherValue = false;
+    }
+    console.log(someOtherValue);
+}
+</code>
+</pre>  
+        </div>
+
+        <div id="note-div">
+            <h2>var, let, and const </h2>
+                <p>
+                    const is the default, while you should use let if you should reassign the variable.
+                    You should never use var, since it can "bleed out" in other scopes, and be changed in different files.
+                </p>
+        </div>
+
+        <div id="learning-goals">
+            <h3>Learning goals:</h3>
+            <p>
+                Understand and work with data types in JavaScript.<br>
+                Knows the existing data types in JavaScript and can work with them.<br>
+                Understands type coercion and strategies to avoid it. <br>
+                Understand scoping in Javascript and know to always use const if you can get away with it otherwise let.<br>
+                
+
+            </p>
+        </div>

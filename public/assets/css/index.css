@@ -1,21 +1,65 @@
 body {
-    background-color: #ffa25b6f;
-}
-
-main {
-    text-align: center;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #fff1e6;
+    color: #222;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 nav {
+    order: -1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    background-color: rgb(143, 166, 227);
+}
+
+nav a {
+    color: #1b2a50;
+    text-decoration: none;
+    padding: 4px 10px;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1 {
     text-align: center;
-    background-color: rgb(91, 116, 184);
 }
 
 #note-div {
-    margin: auto;
-    margin-left: 25%;
-    margin-right: 25%;
-    background-color:
+    background-color: white;
+    padding: 5px 20px 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+code {
+    font-family: Consolas, "courier new", monospace;
+    color: rgb(67, 129, 230);
+    background-color: #f1f1f1;
+    padding: 2px;
+    overflow-wrap: anywhere; /* stops the long file paths from overflowing */
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
 }
 
 #learning-goals {
