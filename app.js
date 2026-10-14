@@ -9,7 +9,8 @@ app.use(express.static('public'))
 
 // Pages //
 
-import { frontpagePage, introductionPage, variablesPage, gitPage, restAPIPage, functionsPage } from './templating/pages.js'
+import { frontpagePage, introductionPage, variablesPage, functionsPage, loopsPage, gitPage, 
+         restAPIPage, packageManagementPage, firstServerPage, crudPage } from './templating/pages.js'
 
 app.get('/', (req, res) => {
     res.send(frontpagePage)
@@ -23,6 +24,14 @@ app.get('/variables', (req, res) => {
     res.send(variablesPage)
 })
 
+app.get('/functions', (req, res) => {
+    res.send(functionsPage)
+})
+
+app.get('/loops', (req, res) => {
+    res.send(loopsPage)
+})
+
 app.get('/git', (req, res) => {
    res.send(gitPage)
 })
@@ -31,8 +40,16 @@ app.get('/rest_api', (req, res) => {
     res.send(restAPIPage)
 })
 
-app.get('/functions', (req, res) => {
-    res.send(functionsPage)
+app.get('/package_management', (req, res) => {
+    res.send(packageManagementPage)
+})
+
+app.get('/first_server', (req, res) => {
+    res.send(firstServerPage)
+})
+
+app.get('/crud', (req, res) => {
+    res.send(crudPage)
 })
 
 const PORT = process.env.PORT ?? 8080

@@ -1,0 +1,37 @@
+<h1>CRUD</h1>
+
+        <div id="note-div">
+            <h2>GET Request over HTTP</h2>
+                <p>
+                    There are two ways of sending and recieving data in express over HTTP.<br>
+                    One being <b>query paramaters</b> and the other being <b>URL parameters</b><br><br>
+
+                    <b> Query Parameters:</b> The thing after ? in the url.<br>
+                    <b> Example:</b> /plants?name=cactus<br>
+
+                    To then acces the data with a get request, req.query.(key) is used: <br>
+                    <code>app.get('/plants', (req, res) => {</code><br>
+                    <code>&nbspconst name = req.query.name</code><br>
+                    <code>&nbspres.send(name)</code><br>
+                    <code>})</code> <br><br>
+
+                    <b> URL parameters:</b> After the "/" after the api name <br>
+                    <b> Example:</b> /plants/5<br>
+
+                    To then acces the data with a get request, req.params.(key) is used: <br>
+                    <code>app.get('/plants/:id', (req, res) => {</code><br>
+                    <code>&nbspconst const id = req.params.id</code><br>
+                    <code>&nbspres.send(id)</code><br>
+                    <code>})</code>
+                </p>
+        </div>
+
+        <div id="learning-goals">
+            <h3>Learning Goals</h3>
+            <p>
+                Understands how to send data with GET requests over HTTP and knows how to do it in Express.<br>
+                Can make a POST request and parse the body in Express. <br>
+                Can create a full CRUDable REST API that follows conventions. <br>
+            </p>
+        </div>
+    
