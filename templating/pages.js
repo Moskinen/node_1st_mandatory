@@ -14,6 +14,7 @@ const restAPI = readPage('public/views/rest_api.html')
 const packageManagement = readPage('public/views/package_management.html')
 const firstServer = readPage('public/views/first_server.html')
 const crud = readPage('public/views/crud.html')
+const modules = readPage('public/views/modules.html')
 
 
 export const frontpagePage = constructPage(frontpage, {
@@ -54,4 +55,8 @@ export const firstServerPage = constructPage(firstServer, {
 
 export const crudPage = constructPage(crud, {
     tabTitle: "CRUD"
+})
+
+export const modulesPage = constructPage(modules, {
+    tabTitle: "Modules"
 })

@@ -1,30 +1,62 @@
 <h1>CRUD</h1>
 
         <div id="note-div">
-            <h2>GET Request over HTTP</h2>
-                <p>
-                    There are two ways of sending and recieving data in express over HTTP.<br>
-                    One being <b>query paramaters</b> and the other being <b>URL parameters</b><br><br>
+            <h2>CRUDable REST API</h2>
+                <p id="crud-paragraph">
+                    Following will be a: get, post, put and delete method for an animal API:<br><br>
+                    
+                    <b>Retrieve all animals:</b><br>
+                    <code>app.get('/animals', (req, res) => {</code><br>
+                    <code>&nbspres.send({ data: animals })</code><br>
+                    <code>})</code><br>
+                    
+                    <b>Retrieve animal by id</b><br>
+                    <code>app.get('/animals/:id', (req, res) => {</code><br>
+                    <code>&nbspconst providedId = Number(req.params.id)</code><br>
+                    <code>&nbspconst foundAnimal = animals.find((animal) => animal.id == providedId)</code><br><br>
+                    <code>&nbspif (!foundAnimal) {</code><br>
+                    <code>&nbspres.status(404).send({ data: `No animal found by id ${providedId}` })</code><br>
+                    <code>&nbspreturn</code><br>
+                    <code>}</code><br>
+                    <code>&nbsp</code><br>
+                    <code>&nbspres.send({ data: foundAnimal})</code><br>
+                    <code>})</code><br><br>
 
-                    <b> Query Parameters:</b> The thing after ? in the url.<br>
-                    <b> Example:</b> /plants?name=cactus<br>
+                    <b>Create an animal:</b><br>
+                    <code>app.post("/animals", (req, res) => {</code><br>
+                    <code>&nbspconst providedAnimal = req.body;</code><br><br>
+                    <code>&nbspprovidedAnimal.id = nextId++</code><br><br>
+                    <code>&nbspanimals.push(providedAnimal)</code><br><br>
+                    <code>&nbspres.send({ data: providedAnimal});</code><br>
+                    <code>})</code><br><br>
 
-                    To then acces the data with a get request, req.query.(key) is used: <br>
-                    <code>app.get('/plants', (req, res) => {</code><br>
-                    <code>&nbspconst name = req.query.name</code><br>
-                    <code>&nbspres.send(name)</code><br>
-                    <code>})</code> <br><br>
+                    <b>Update an animal:</b><br>
+                    <code>app.patch("/animals/:id", (req, res) => {</code><br>
+                    <code>&nbspconst providedId = Number(req.params.id)</code><br>
+                    <code>&nbspconst foundAnimalIndex = animals.findIndex((animal) => animal.id === providedId)</code><br><br>
+                    <code>&nbspif (foundAnimalIndex === -1) {</code><br>
+                    <code>&nbspreturn res.status(404).send({errorMessage: `No animal found by id ${providedId}` })</code><br>
+                    <code>&nbsp}</code><br><br>
+                    <code>&nbspconst providedAnimal = req.body</code><br>
+                    <code>&nbspprovidedAnimal.id = providedId</code><br><br>
+                    <code>&nbspconst animalToCreate = { ...foundAnimal, ...providedAnimal, id: providedId}</code><br><br>
+                    <code>&nbspanimals[foundAnimalIndex] = animalToCreate</code><br><br>
+                    <code>&nbspres.send({ data: animalToCreate })</code><br>
+                    <code>})</code><br><br>
 
-                    <b> URL parameters:</b> After the "/" after the api name <br>
-                    <b> Example:</b> /plants/5<br>
-
-                    To then acces the data with a get request, req.params.(key) is used: <br>
-                    <code>app.get('/plants/:id', (req, res) => {</code><br>
-                    <code>&nbspconst const id = req.params.id</code><br>
-                    <code>&nbspres.send(id)</code><br>
+                    <b>Delete an animal:</b><br>
+                    <code>app.delete("animals/:id", (req, res) => {</code><br>
+                    <code>&nbspconst providedId = Number(req.params.id)</code><br>
+                    <code>&nbspconst foundAnimalIndex = animals.findIndex((animal) => animal.id === providedId)</code><br><br>
+                    <code>&nbspif (foundAnimalIndex === -1) {</code><br>
+                    <code>&nbspreturn res.status(404).send({errorMessage: `No animal found by id ${providedId}` })</code><br>
+                    <code>&nbsp}</code><br><br>
+                    <code>&nbspanimals.splice(foundAnimalIndex, 1)</code><br><br>
+                    <code>&nbspres.status(204).send()</code><br>
                     <code>})</code>
                 </p>
         </div>
+
 
         <div id="learning-goals">
             <h3>Learning Goals</h3>

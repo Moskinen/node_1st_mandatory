@@ -22,16 +22,57 @@
         </div>
 
         <div id="note-div">
-            <h2></h2>
+            <h2>URL Terminology</h2>
                 <p>
-                 
+                    You need to understand different parts of a URL to know how to retrieve data from it<br>
+                    Following is an example of a URL: <br><br>
+
+                    https://localhost.com:8080/plants/5?name=cactus <br><br>
+
+                    <b>http://</b> Is the protocol <br>
+                    <b>localhost</b> is the domain <br>
+                    <b>8080</b> Is the port <br>
+                    <b>/plants/5</b> Is the path <br>
+                    <b>?name=cactus</b> Is the query string
+
                 </p>
         </div>
 
         <div id="note-div">
-            <h2></h2>
+            <h2>GET Request over HTTP</h2>
                 <p>
-                 
+                    There are two ways of sending and recieving data in express over HTTP.<br>
+                    One being <b>query paramaters</b> and the other being <b>URL parameters</b><br><br>
+
+                    <b> Query Parameters:</b> The thing after ? in the url.<br>
+                    <b> Example:</b> /plants?name=cactus<br>
+
+                    To then acces the data with a get request, req.query.(key) is used: <br>
+                    <code>app.get('/plants', (req, res) => {</code><br>
+                    <code>&nbspconst name = req.query.name</code><br>
+                    <code>&nbspres.send(name)</code><br>
+                    <code>})</code> <br><br>
+
+                    <b> URL parameters:</b> After the "/" after the api name <br>
+                    <b> Example:</b> /plants/5<br>
+
+                    To then acces the data with a get request, req.params.(key) is used: <br>
+                    <code>app.get('/plants/:id', (req, res) => {</code><br>
+                    <code>&nbspconst const id = req.params.id</code><br>
+                    <code>&nbspres.send(id)</code><br>
+                    <code>})</code>
+                </p>
+        </div>
+
+        <div id="note-div">
+            <h2>Serving Static files</h2>
+                <p>
+                    To make html, css, js, images, and such accesible to the client, we need to serve them. <br>
+                    It can be done like our get methods, but a better approach is serving all static files through af directory <br>
+                    <code>app.use(express.static('public'))</code><br><br>
+
+                    Then in our public directory we will have a file structure icluding css, html, js and picture. <br>
+                    But we have to make sure only client side files will be served. It can be a safety issue if sever side code is exposed<br>
                 </p>
         </div>
 
@@ -40,6 +81,7 @@
             <p>
                 Can create a server with Express from memory.<br>
                 Can explain the client-server model.<br>
+                Understands the security need to serve static files and can do it in Express.
             </p>
         </div>
     
