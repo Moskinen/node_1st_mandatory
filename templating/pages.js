@@ -15,7 +15,7 @@ const packageManagement = readPage('public/views/package_management.html')
 const firstServer = readPage('public/views/first_server.html')
 const crud = readPage('public/views/crud.html')
 const modules = readPage('public/views/modules.html')
-
+const redirection = readPage('public/views/redirection.html')
 
 export const frontpagePage = constructPage(frontpage, {
     tabTitle: "Frontpage"
@@ -59,4 +59,8 @@ export const crudPage = constructPage(crud, {
 
 export const modulesPage = constructPage(modules, {
     tabTitle: "Modules"
+})
+
+export const redirectionPage = constructPage(redirection, {
+    tabTitle: "Redirection"
 })

@@ -4,13 +4,23 @@
             <h2>CommonJS vs ES modules</h2>
                 <p>
                     Node.js supports commonJS and ES modules.<br>
-                    CommonJS was the original 
+                    CommonJS was the original and uses <b>require()</b> to import and <b>module.export</b> to export.<br><br>
+                    ES Modules is now the standard module system, it uses the same import and export syntax as browser in Javascript<br>
+                    The syntax being the same helps with standardization.<br>
+                    Example on import an export with ES modules<br><br>
+                    
+                    <code>export const frontpagePage = constructPage(fronptage);</code><br>
+                    I can then import the frontpagePage in another file with the following statement:<br>
+                    <code>import { frontpagePage } from './templating/pages.js'</code>
+
                 </p>
         </div>
 
         <div id="learning-goals">
             <h3>Learning Goals</h3>
-            <p>Can work with both types of import/export in HTML.</p><br>
-            <p>Can import/export in both ways in Node.js (CommonJS and ES Modules). Knows the pros of using ES Modules.</p>
+            <p>
+                Can work with both types of import/export in HTML.<br>
+                Can import/export in both ways in Node.js (CommonJS and ES Modules). Knows the pros of using ES Modules.
+            </p>
         </div>
     

@@ -1,0 +1,38 @@
+<h1>Template Title</h1>
+
+        <div id="note-div">
+            <h2>Redirection methods</h2>
+                <p>
+                    The first two ways are client-side:<br>
+                    One way is to use setTimeout() to set a delay on the action and .href to define where to redirect to. <br>
+                    The syntax would look like this:<br>
+                    <code>setTimeout(() => {</code><br>
+                    <code>&nbsp&nbspwindow.location.href = "/"</code><br>
+                    <code>}, 3000);</code><br><br>
+
+                    Another way of doing redirection is with the meta tag in HTML. The syntax for that would be:<br>
+                    <code>&lt;meta http-equiv="refresh" content="3; url=/" /&gt;</code><br><br>
+
+                    The last way is to do it server-side<br>
+                    <code>app.get('/redirect', (req, res) => {</code><br>
+                    <code>&nbspres.redirect('/fronptage');</code><br>
+                    <code>});</code>
+                </p>
+        </div>
+
+        <div id="note-div">
+            <h2>Client-side vs Server-side redirection </h2>
+                <p>
+                    <b>Client side:</b> Happens in the browser, uses JS or HTML, requires the page or script to load first<br>
+                    <b>Server side:</b> Initiated by the server, uses HTTP to redirect, can redirect before the page is loaded
+                </p>
+        </div>
+
+        <div id="learning-goals">
+            <h3>Learning goals</h3>
+            <p>
+                Can recount the number of ways and approaches to redirection.<br>
+                Understands the difference between client-side redirection and server-side.
+            </p>
+        </div>
+    
