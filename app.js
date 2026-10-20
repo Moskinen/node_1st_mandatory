@@ -10,7 +10,8 @@ app.use(express.static('public'))
 // Pages //
 
 import { frontpagePage, introductionPage, variablesPage, functionsPage, loopsPage, gitPage, 
-         restAPIPage, packageManagementPage, firstServerPage, crudPage, modulesPage, redirectionPage } from './templating/pages.js'
+         restAPIPage, packageManagementPage, firstServerPage, crudPage, modulesPage, 
+         redirectionPage, templatingPage } from './templating/pages.js'
 
 app.get('/', (req, res) => {
     res.send(frontpagePage)
@@ -58,6 +59,10 @@ app.get('/modules', (req, res) => {
 
 app.get('/redirection', (req, res) => {
     res.send(redirectionPage)
+})
+
+app.get('/templating', (req, res) => {
+    res.send(templatingPage)
 })
 
 const PORT = process.env.PORT ?? 8080
