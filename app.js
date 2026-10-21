@@ -1,7 +1,6 @@
 // Server Setup //
 
 import express from 'express'
-import path from 'path'
 
 const app = express()
 
@@ -11,7 +10,7 @@ app.use(express.static('public'))
 
 import { frontpagePage, introductionPage, variablesPage, functionsPage, loopsPage, gitPage, 
          restAPIPage, packageManagementPage, firstServerPage, crudPage, modulesPage, 
-         redirectionPage, templatingPage } from './templating/pages.js'
+         redirectionPage } from './templating/pages.js'
 
 app.get('/', (req, res) => {
     res.send(frontpagePage)
@@ -59,10 +58,6 @@ app.get('/modules', (req, res) => {
 
 app.get('/redirection', (req, res) => {
     res.send(redirectionPage)
-})
-
-app.get('/templating', (req, res) => {
-    res.send(templatingPage)
 })
 
 const PORT = process.env.PORT ?? 8080

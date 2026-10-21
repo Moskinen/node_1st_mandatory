@@ -1,8 +1,4 @@
-import { read } from "fs";
 import { constructPage, readPage } from "./templatingEnginge.js";
-
-const header = ""
-const footer = ""
 
 const frontpage = readPage('public/frontpage/index.html')
 const introduction = readPage('public/views/introduction.html')
@@ -16,7 +12,6 @@ const firstServer = readPage('public/views/first_server.html')
 const crud = readPage('public/views/crud.html')
 const modules = readPage('public/views/modules.html')
 const redirection = readPage('public/views/redirection.html')
-const templating = readPage('public/views/templating.html')
 
 export const frontpagePage = constructPage(frontpage, {
     tabTitle: "Frontpage"
@@ -64,8 +59,4 @@ export const modulesPage = constructPage(modules, {
 
 export const redirectionPage = constructPage(redirection, {
     tabTitle: "Redirection"
-})
-
-export const templatingPage = constructPage(templating, {
-    tabTitle: "Templating"
 })

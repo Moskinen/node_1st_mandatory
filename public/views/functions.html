@@ -47,8 +47,12 @@
         <div id="note-div">
             <h2>Callback function</h2>
                 <p>
-                 A callback function is a function, within a function. In our semester we use it setting up the server. <br>
-                 <!-- RESEARCH CALLBACK FUNCTION -->
+                A callback function is a function passed as an argument to another
+                function. The receiving function can call the callback when needed.
+
+                In our semester, we use callback functions when setting up an Express
+                server. For example, app.listen(PORT, () => {...}) takes a callback
+                function that runs when the server has started listening.
                 </p>
         </div>
 
