@@ -55,7 +55,7 @@ code {
     color: rgb(67, 129, 230);
     background-color: #f1f1f1;
     padding: 2px;
-    overflow-wrap: anywhere; /* stops the long file paths from overflowing */
+    overflow-wrap: anywhere; 
 }
 
 footer {
