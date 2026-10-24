@@ -60,12 +60,19 @@ app.get('/redirection', (req, res) => {
     res.send(redirectionPage)
 })
 
-const PORT = process.env.PORT ?? 8080
+if (process.env.VERCEL) {
+    // Vercel handles the server
+} else {
+    const PORT = process.env.PORT ?? 8080;
 
-app.listen (PORT, (error) => {
-    if (error) {
-        console.log("Error starting the server", error)
-        return
-    }
-    console.log('Server is running on port', PORT)
-})
+    app.listen(PORT, (error) => {
+        if (error) {
+            console.log("Error starting the server", error);
+            return;
+        }
+
+        console.log("Server is running on port", PORT);
+    });
+}
+
+export default app;
